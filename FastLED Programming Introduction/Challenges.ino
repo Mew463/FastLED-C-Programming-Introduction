@@ -22,21 +22,12 @@ void turnAllLedsOn(CRGB color) {
 // ----- Problem 3 -----
 void bouncePixel(CRGB color, int waitTime) {
   for (int i = 0; i < NUM_LEDS; i++) {
-    leds[i] = color;
-    FastLED.show();
-    delay(waitTime);
-    leds[i] = CRGB::Black;
+    // set led to the given color 
+    // display the color onto the strip
+    // wait the given amount of time
+    // set led back to the color black
   }
 
   /* FINISH ME */
 
-}
-
-// Optional Problems
-void makeRainbow(int delayTime) {
-  static uint8_t starthue = 0;
-  delay(delayTime);
-  fill_rainbow(leds, NUM_LEDS, starthue++, 4);
-  FastLED.show();
-  
 }

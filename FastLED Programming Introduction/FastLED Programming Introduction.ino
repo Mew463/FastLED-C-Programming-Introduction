@@ -16,7 +16,7 @@ void setup() { // Stuff in here runs once
 
 }
 void loop() { // Stuff in here runs forever
-  // bouncePixel(CRGB::Blue, 250);
+  
 }
 
 
