@@ -5,29 +5,37 @@ void turnLedOn(CRGB color, int index) {
 }
 
 void turnLedOff(int index) {
-  /* COMPLETE ME */
+  leds[index] = CRGB::Black;
+  FastLED.show();   // <-- Very important and easy to forget!!!
 }
 
 // ----- Problem 2 -----
 void turnAllLedsOff() {
   for (int i = 0; i < NUM_LEDS; i++)
-    // What should we put here to turn the led at index "i" off? 
+    leds[i] = CRGB::Black;
   FastLED.show();
 }
 
 void turnAllLedsOn(CRGB color) {
-  /* COMPLETE ME */
+  for (int i = 0; i < NUM_LEDS; i++)
+    leds[i] = color;
+  FastLED.show();
 }
 
 // ----- Problem 3 -----
 void bouncePixel(CRGB color, int waitTime) {
   for (int i = 0; i < NUM_LEDS; i++) {
-    // set led to the given color 
-    // display the color onto the strip
-    // wait the given amount of time
-    // set led back to the color black
+    leds[i] = color;     // set led to the given color 
+    FastLED.show(); // display the color onto the strip
+    delay(waitTime); // wait the given amount of time
+    leds[i] = CRGB::Black; // set led back to the color black
   }
 
-  /* FINISH ME */
+  for (int i = NUM_LEDS-1; i > 0; i--) {
+    leds[i] = color;     // set led to the given color 
+    FastLED.show(); // display the color onto the strip
+    delay(waitTime); // wait the given amount of time
+    leds[i] = CRGB::Black; // set led back to the color black
+  }
 
 }
